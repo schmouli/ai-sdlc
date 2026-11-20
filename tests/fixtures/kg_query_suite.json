@@ -1,0 +1,216 @@
+{
+  "suite_version": "1.0.0",
+  "description": "Graph-vs-traditional retrieval evaluation suite (spec US4). Hard queries: expected node is >=2 graph hops from the query's textually nearest node (audited against full build 2026-11-09, commit d7e2f96, 2361 nodes). Easy queries: target name lexically similar to query tokens.",
+  "queries": [
+    {
+      "id": "easy-001",
+      "category": "easy",
+      "query": "regime detector classify volatility",
+      "expected_node_id": "s:src/analytics/regime_detector.py#RegimeDetector",
+      "justification": "target class name tokens (regime, detector) directly overlap query tokens"
+    },
+    {
+      "id": "easy-002",
+      "category": "easy",
+      "query": "kelly criterion analyzer",
+      "expected_node_id": "s:src/analytics/kelly_criterion.py#KellyCriterionAnalyzer",
+      "justification": "target qualified name contains all query tokens"
+    },
+    {
+      "id": "easy-003",
+      "category": "easy",
+      "query": "signal journal record decision",
+      "expected_node_id": "s:src/ml/signal_journal.py#SignalJournal",
+      "justification": "target symbol/file tokens (signal, journal) overlap query directly"
+    },
+    {
+      "id": "easy-004",
+      "category": "easy",
+      "query": "adaptive threshold controller",
+      "expected_node_id": "s:src/ml/adaptive_thresholds.py#AdaptiveThresholdController",
+      "justification": "exact class-name match"
+    },
+    {
+      "id": "easy-005",
+      "category": "easy",
+      "query": "model registry champion lifecycle",
+      "expected_node_id": "s:src/ml/model_registry.py#ModelRegistry",
+      "justification": "model registry tokens match target class"
+    },
+    {
+      "id": "easy-006",
+      "category": "easy",
+      "query": "supres signal listener",
+      "expected_node_id": "f:src/communication/supp_res_signal_listener.py",
+      "justification": "listener file name matches query tokens"
+    },
+    {
+      "id": "easy-007",
+      "category": "easy",
+      "query": "mt4 sync manager",
+      "expected_node_id": "f:utils/mt4_sync_manager.py",
+      "justification": "exact file-name match"
+    },
+    {
+      "id": "easy-008",
+      "category": "easy",
+      "query": "ea health monitor heartbeat",
+      "expected_node_id": "f:scripts/monitor_ea_health.py",
+      "justification": "monitor name plus EA-health concept in file name"
+    },
+    {
+      "id": "easy-009",
+      "category": "easy",
+      "query": "learning scheduler loop",
+      "expected_node_id": "f:scripts/learning_scheduler.py",
+      "justification": "exact file-name match"
+    },
+    {
+      "id": "easy-010",
+      "category": "easy",
+      "query": "kelly lot calculator position sizing",
+      "expected_node_id": "s:src/analytics/kelly_lot_calculator.py#KellyLotSizeCalculator",
+      "justification": "class name matches query tokens"
+    },
+    {
+      "id": "easy-011",
+      "category": "easy",
+      "query": "smart execution engine twap vwap iceberg",
+      "expected_node_id": "s:src/core/smart_trading_engine.py#SmartTradingEngine",
+      "justification": "smart trading engine tokens match; algorithms in same file docstrings"
+    },
+    {
+      "id": "easy-012",
+      "category": "easy",
+      "query": "trading engine execute buy trades",
+      "expected_node_id": "s:src/core/trading_engine.py#ImprovedTradingEngine.execute_buy_trades",
+      "justification": "method name literally in query"
+    },
+    {
+      "id": "easy-013",
+      "category": "easy",
+      "query": "ml data sync manager enrich trades",
+      "expected_node_id": "s:utils/mt4_sync_manager.py#MT4DataSyncManager",
+      "justification": "manager class name overlaps sync manager tokens"
+    },
+    {
+      "id": "easy-014",
+      "category": "easy",
+      "query": "regime detector file",
+      "expected_node_id": "f:src/analytics/regime_detector.py",
+      "justification": "file name matches query"
+    },
+    {
+      "id": "easy-015",
+      "category": "easy",
+      "query": "supp res signal class parse",
+      "expected_node_id": "s:src/communication/supp_res_signal_listener.py#SupResSignal",
+      "justification": "supp res signal tokens match class name"
+    },
+    {
+      "id": "hard-001",
+      "category": "hard",
+      "query": "which module tracks broker time conversion",
+      "expected_node_id": "s:utils/mt4_sync_manager.py#EST_TIMEZONE",
+      "justification": "no query token appears in target name; broker-time concept is structural (export EA -> sync manager conversion), textually nearest nodes are unrelated"
+    },
+    {
+      "id": "hard-002",
+      "category": "hard",
+      "query": "where do rejected signals get archived",
+      "expected_node_id": "s:src/communication/supp_res_signal_listener.py#SupResSignalListener._archive_signal",
+      "justification": "archive concept lives in a private method; no query token matches its name; structural relation (listener -> rejected dir)"
+    },
+    {
+      "id": "hard-003",
+      "category": "hard",
+      "query": "how does the execution server report failures",
+      "expected_node_id": "s:src/core/trading_engine.py#ImprovedTradingEngine._get_trade_response",
+      "justification": "server-response handling is a private helper; query names no token of it; multi-hop via connector"
+    },
+    {
+      "id": "hard-004",
+      "category": "hard",
+      "query": "which code links cached predictions to imported trades",
+      "expected_node_id": "s:utils/mt4_sync_manager.py#MT4DataSyncManager._find_ml_prediction_cache",
+      "justification": "cache-linking is a private step; tokens (links, cached, predictions, imported, trades) only partially overlap and target name hides the relation"
+    },
+    {
+      "id": "hard-005",
+      "category": "hard",
+      "query": "what computes the journal outcome breakdown by regime",
+      "expected_node_id": "s:src/ml/signal_journal.py#SignalJournal._regime_breakdown",
+      "justification": "private analytics helper; query words (computes, outcome, breakdown) not in name"
+    },
+    {
+      "id": "hard-006",
+      "category": "hard",
+      "query": "where is the correlation group assigned",
+      "expected_node_id": "s:src/core/trading_engine.py#ImprovedTradingEngine._get_correlation_group",
+      "justification": "query uses passive concept phrasing; target is a private underscore method name sharing only one token"
+    },
+    {
+      "id": "hard-007",
+      "category": "hard",
+      "query": "which function slices orders into hidden pieces",
+      "expected_node_id": "s:src/core/smart_trading_engine.py#SmartTradingEngine._execute_slice",
+      "justification": "iceberg slicing is described conceptually; private method name shares no query token; structural relation via engine class only"
+    },
+    {
+      "id": "hard-008",
+      "category": "hard",
+      "query": "what writes the trade execution details record",
+      "expected_node_id": "s:src/core/trading_engine.py#ImprovedTradingEngine._write_trade_execution_details",
+      "justification": "private writer method; query paraphrases (writes, record) without name tokens"
+    },
+    {
+      "id": "hard-009",
+      "category": "hard",
+      "query": "which helper loads previously processed export files",
+      "expected_node_id": "s:utils/mt4_sync_manager.py#MT4DataSyncManager._load_processed_exports",
+      "justification": "loader is underscore-private; query avoids its literal name; >2 hops from textually nearest sync entry points"
+    },
+    {
+      "id": "hard-010",
+      "category": "hard",
+      "query": "where does the listener record per signal health rejections",
+      "expected_node_id": "s:src/communication/supp_res_signal_listener.py#SupResSignalListener.get_statistics",
+      "justification": "rejection counters surface via stats accessor, not a rejection-named symbol; conceptually distant"
+    },
+    {
+      "id": "hard-011",
+      "category": "hard",
+      "query": "what code reacts when a model gate fails",
+      "expected_node_id": "f:src/ml/model_registry.py",
+      "justification": "gate-failure handling (rejected status) is structurally embedded; file node target reachable only through registry symbols; lexical nearest nodes are gate/threshold modules"
+    },
+    {
+      "id": "hard-012",
+      "category": "hard",
+      "query": "who consumes the weekly outcome report after close",
+      "expected_node_id": "f:scripts/learning_scheduler.py",
+      "justification": "weekly report consumption lives in scheduler flow; no query token appears in file name or its top symbols; >2 hops from report-named modules"
+    },
+    {
+      "id": "hard-013",
+      "category": "hard",
+      "query": "what positions sizing responds to high volatility",
+      "expected_node_id": "s:src/analytics/kelly_lot_calculator.py#KellyLotSizeCalculator",
+      "justification": "volatility response flows regime->sizing; calculator name lacks volatility tokens; structural distance measured at build time"
+    },
+    {
+      "id": "hard-014",
+      "category": "hard",
+      "query": "which module decides entry approval from win probability floor",
+      "expected_node_id": "f:src/ml/adaptive_thresholds.py",
+      "justification": "approval-floor logic described conceptually; module name shares no approval token; nearest lexical nodes are predictor modules"
+    },
+    {
+      "id": "hard-015",
+      "category": "hard",
+      "query": "where do heartbeat files get validated before alerts",
+      "expected_node_id": "s:scripts/monitor_ea_health.py#main",
+      "justification": "validation-before-alert flow is inside main; heartbeat token overlaps but entry function name shares none; >2 hops"
+    }
+  ]
+}

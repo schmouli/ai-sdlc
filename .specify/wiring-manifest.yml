@@ -1,0 +1,196 @@
+wiring_manifest_version: 1
+review_profiles:
+  SPEC:
+    reviewers:
+    - zoom_out
+    - comprehension
+    - design_critic
+    - structural
+    count: 4
+    fan_out_cap: 5
+  READINESS:
+    reviewers:
+    - implementation_readiness
+    - codebase_details
+    - style
+    count: 3
+    fan_out_cap: 5
+  TASKS:
+    reviewers:
+    - implementation_readiness
+    - structural
+    - codebase_details
+    count: 3
+    fan_out_cap: 5
+  CONSISTENCY:
+    reviewers:
+    - comprehension
+    - design_critic
+    - codebase_details
+    count: 3
+    fan_out_cap: 5
+  DRIFT:
+    reviewers: []
+    count: 0
+    fan_out_cap: 0
+consult_matrix:
+  zoom_out: none
+  comprehension: none
+  design_critic: digest
+  codebase_details: digest
+  structural: digest
+  implementation_readiness: digest
+  style: digest
+stages:
+  after_specify:
+    command: egm.review.loop
+    profile: SPEC
+    gate_order: 1
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - speckit_stage_completed
+    - egm_review_round
+    boundary_sentence: 'Advisory only: review findings never gate implementation or
+      touch the trading loop.'
+  after_plan:
+    command: egm.review
+    profile: READINESS
+    gate_order: 2
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - speckit_stage_completed
+    - egm_review_round
+    boundary_sentence: 'Advisory only: readiness findings never gate implementation
+      or touch the trading loop.'
+  after_tasks:
+    command: egm.review.loop
+    profile: TASKS
+    gate_order: 3
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - speckit_stage_completed
+    - egm_review_round
+    boundary_sentence: 'Advisory only: task-review findings never gate implementation
+      or touch the trading loop.'
+  after_analyze:
+    command: egm.review.loop
+    profile: CONSISTENCY
+    gate_order: 4
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - speckit_stage_completed
+    - egm_review_round
+    boundary_sentence: 'Advisory only: consistency findings never gate implementation
+      or touch the trading loop.'
+  after_implement:
+    command: egm.drift.report
+    profile: DRIFT
+    gate_order: 5
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - speckit_stage_completed
+    boundary_sentence: 'Advisory only: drift findings never block implementation or
+      touch the trading loop.'
+  after_converge:
+    command: egm.review.loop
+    profile: TASKS
+    gate_order: 6
+    telemetry_events:
+    - hook_gate_accepted
+    - hook_gate_skipped
+    - egm_review_round
+    boundary_sentence: 'Advisory only: convergence re-audit findings never block anything.'
+  before_specify:
+    command: egm.brainstorm
+    roster_exempt: true
+    telemetry_events: []
+    boundary_sentence: Concept stress-test; disabled by default (6-lens swarm exceeds
+      the fan-out cap).
+  after_clarify:
+    command: egm.review.loop
+    roster_exempt: false
+    telemetry_events: []
+    boundary_sentence: Optional re-review after clarification edits.
+token_budgets:
+  digest_max_bytes: 8192
+  inline_excerpt_max_bytes: 4096
+  hook_decision_cap: 8
+  silent_capture_lookback_days: 14
+  retention_days: 30
+  # feature-008 context budgets (advisory until the one-time rewrite, B.8)
+  standing_instructions_max_bytes: 32500
+  enforce_standing_instructions: false
+  artifact_budgets:
+    findings_max_bytes: 16384
+    resolution_max_bytes: 20480
+    drift_max_bytes: 10240
+trigger:
+  min_lifecycle_events: 30
+  min_acceptance_rate: 0.6
+  min_features: 2
+phase_status:
+  phase_0: complete
+  phase_1: complete
+  phase_2: complete
+  phase_3: pending
+phases:
+  0:
+    title: Verifier/manifest/map baseline
+    invariant: verifier exit 0
+  1:
+    title: Digest consultation
+    invariant: verifier exit 0
+  2:
+    title: Telemetry capture
+    invariant: verifier exit 0; quarantine criterion met
+  3:
+    title: Conditional expansion
+    invariant: data-gated (trigger + recorded confirmation)
+wiring_adopted_at: 2026-11-12 13:22:08
+artifacts:
+  lifecycle_map:
+    path: docs/AI_SDLC_LIFECYCLE_MAP.md
+    required: true
+  digest:
+    path: output/kg/digest_for_reviews.md
+  hook_ledger:
+    path: .skillbox/wiring/hook_ledger.json
+  round_drop_dir:
+    path: logs/egm_rounds/
+egm_dependency:
+  skills_root: egm/skills
+  agents_root: egm/agents
+  personas_root: egm/personas/agents
+  expected_skills:
+  - egm-brainstorm
+  - egm-draft
+  - egm-review
+  - egm-review-loop
+  - egm-resolve
+  - egm-drift-report
+  - egm-bootstrap
+  expected_agents:
+  - egm-zoom-out.agent.md
+  - egm-comprehension.agent.md
+  - egm-design.agent.md
+  - egm-structural.agent.md
+  - egm-style.agent.md
+  - egm-implementation-readiness.agent.md
+  - egm-codebase-details.agent.md
+  - egm-synthesizer.agent.md
+  - egm-bootstrap-orchestrator.agent.md
+  expected_personas:
+  - zoom_out
+  - comprehension
+  - design_critic
+  - structural
+  - style
+  - implementation_readiness
+  - codebase_details
+  upstream_pin: 36343a16f0e0d830a7ed78b0da97695379ab3243
+  design_dir: design/

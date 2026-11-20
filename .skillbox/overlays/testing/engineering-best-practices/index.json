@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "overlay_id": "testing/engineering-best-practices",
+  "versions": [
+    {
+      "version": "v01",
+      "content_path": "overlays\\testing\\engineering-best-practices\\versions\\v01.md",
+      "content_hash": "sha256:d383e7b031f90f7091b17816751e46671163d6312a2ff540cf028de268818833",
+      "generated_at": "2026-11-09T23:35:35.852003-05:00",
+      "source_learning_ids": [
+        "LRN-SEED-BESTPRACTICES"
+      ],
+      "evidence_summary": {
+        "seed": true,
+        "basis": "operator-authored best-practices skeleton (features 001-004 observed practice)",
+        "frequency": null,
+        "success_rate": null
+      },
+      "status": "active",
+      "status_changed_at": "2026-11-09T23:37:07.579313-05:00",
+      "pending_since": null
+    }
+  ],
+  "active_version": "v01"
+}

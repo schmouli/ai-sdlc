@@ -1,0 +1,52 @@
+#!/bin/sh
+# MetaTrader code knowledge graph auto-stamp (feature 003-code-knowledge-graph).
+# Runs after EVERY commit so the graph stays current with git history.
+#
+# Design per specs/003-code-knowledge-graph (FR-011/FR-017, quickstart Scenario 4):
+#   - `update` re-detects only this commit's changed files (near-zero append cost)
+#   - idempotent: re-run over the same HEAD is a zero-change no-op (byte-identical)
+#   - fail-soft: hook NEVER blocks the commit; graph failures only log a notice.
+#     The knowledge graph is read-only advisory tooling (constitution Principle II):
+#     it writes nothing outside output/kg/ and logs/kg_builder.log.
+#
+# Manual equivalents:
+#   python scripts/run_knowledge_graph.py update
+#   python scripts/run_knowledge_graph.py report
+
+notice() {
+    echo "[kg-stamp] $1" >&2
+}
+
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+if [ -z "$REPO_ROOT" ]; then
+    notice "not a git repo - skipping"
+    exit 0
+fi
+
+# Prefer the project venv python, fall back to PATH python.
+PYTHON=""
+for candidate in "$REPO_ROOT/.venv/Scripts/python.exe" "$REPO_ROOT/.venv/bin/python" "python"; do
+    if command -v "$candidate" >/dev/null 2>&1 || [ -x "$candidate" ]; then
+        PYTHON="$candidate"
+        break
+    fi
+done
+if [ -z "$PYTHON" ]; then
+    notice "no python found - graph not stamped (run: python scripts/run_knowledge_graph.py update)"
+    exit 0
+fi
+
+cd "$REPO_ROOT" || exit 0
+
+# Run the incremental stamp. Output is condensed; failures never fail the commit.
+STAMP_OUT="$("$PYTHON" scripts/run_knowledge_graph.py update 2>&1)"
+STAMP_RC=$?
+if [ $STAMP_RC -ne 0 ]; then
+    notice "graph update failed (rc=$STAMP_RC) - commit stands; inspect logs/kg_builder.log"
+    exit 0
+fi
+
+# One-line summary for the committer (informational only).
+SUMMARY=$(printf '%s' "$STAMP_OUT" | grep -o '"mode": *"[^"]*"' | head -1 | sed 's/.*: *"//; s/"//')
+notice "graph stamped: $SUMMARY (output/kg/graph_snapshot.json)"
+exit 0

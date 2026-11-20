@@ -1,0 +1,76 @@
+installed: []
+settings:
+  auto_execute_hooks: false
+hooks:
+  before_specify:
+  - extension: egm
+    command: egm.brainstorm
+    enabled: false
+    optional: true
+    priority: 5
+    description: 6-lens Goldfish concept stress-test -> concepts_brief.md (exceeds 5-subagent cap; off by default)
+    prompt: 'Run /egm-brainstorm to stress-test the concept before writing spec.md?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.brainstorm --stage before_specify --feature-dir <feature_dir>.'
+    condition: null
+  after_specify:
+  - extension: egm
+    command: egm.review.loop
+    enabled: true
+    optional: true
+    priority: 5
+    description: 'Lean Goldfish spec review: SPEC profile, 4 subagents (zoom_out, comprehension, design_critic, structural)'
+    prompt: 'Run /egm-review-loop on the generated spec.md using the SPEC profile from /metatrader-elephant (4 Goldfish: zoom_out, comprehension, design_critic, structural; direct dispatch, no synthesizer)?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review.loop --stage after_specify --feature-dir <feature_dir>. After the review completes, write `findings_roundN.md` and `resolution_roundN.md` (one pair per internal loop round; `_attemptN` filename suffix and `attempt: M` frontmatter only on genuine re-reviews) into this feature''s directory, with `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter — counts in frontmatter are mandatory; this is a post-review documentation duty, never a gate precondition.'
+    condition: null
+  after_clarify:
+  - extension: egm
+    command: egm.review.loop
+    enabled: false
+    optional: true
+    priority: 5
+    description: Re-run the SPEC-profile (4-reviewer) review on the clarified spec.md
+    prompt: 'Run /egm-review-loop on the clarified spec.md with the SPEC profile (zoom_out, comprehension, design_critic, structural)?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review.loop --stage after_clarify --feature-dir <feature_dir>.'
+    condition: null
+  after_plan:
+  - extension: egm
+    command: egm.review
+    enabled: true
+    optional: true
+    priority: 5
+    description: Goldfish implementation-readiness audit of plan.md (single stage-9 pass, 3 subagents)
+    prompt: 'Run /egm-review (Implementation plan only) readiness audit on plan.md?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review --stage after_plan --feature-dir <feature_dir>. After the readiness audit completes, write `implementation_readiness_report.md` (singleton; no `round` field) into this feature''s directory, with `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter carrying `findings_count` — mandatory; post-review documentation duty, never a precondition.'
+    condition: null
+  after_tasks:
+  - extension: egm
+    command: egm.review.loop
+    enabled: true
+    optional: true
+    priority: 5
+    description: Review-loop over tasks.md, TASKS profile, 3 subagents (implementation_readiness, structural, codebase_details)
+    prompt: 'Run /egm-review-loop on tasks.md with the TASKS profile (3 reviewers: implementation_readiness, structural, codebase_details)?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review.loop --stage after_tasks --feature-dir <feature_dir>. After the review completes, write `findings_tasks_rN.md` and `resolution_tasks_rN.md` (one pair per internal loop round; `_attemptN` suffix only on re-reviews) into this feature''s directory, with `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter — counts mandatory; post-review documentation duty, never a precondition.'
+    condition: null
+  after_analyze:
+  - extension: egm
+    command: egm.review.loop
+    enabled: true
+    optional: true
+    priority: 5
+    description: Review-loop cross-artifact consistency pass, CONSISTENCY profile, 3 subagents (comprehension, design_critic, codebase_details)
+    prompt: 'Run /egm-review-loop for a cross-artifact consistency pass over spec.md, plan.md, and tasks.md with the CONSISTENCY profile (3 reviewers: comprehension, design_critic, codebase_details)?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review.loop --stage after_analyze --feature-dir <feature_dir>. After the consistency pass completes, write `consistency_report_roundN.md` (one per internal loop round) into this feature''s directory, with `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter carrying `findings_count` — mandatory; post-review documentation duty, never a precondition.'
+    condition: null
+  after_implement:
+  - extension: egm
+    command: egm.drift.report
+    enabled: true
+    optional: true
+    priority: 5
+    description: 'Doc-vs-code drift report: implemented code against spec.md and plan.md'
+    prompt: 'Run /egm-drift-report on the feature''s specs directory to compare the design artifacts against the implemented code?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.drift.report --stage after_implement --feature-dir <feature_dir>. After the drift review completes, write `drift_report_run1.md` (run-suffixed; run 1 is the metric; later runs are snapshots) into this feature''s directory, with `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter carrying `findings_count` — mandatory; post-review documentation duty, never a precondition. This supersedes the dated cwd filename; the ticket-folder file is canonical.'
+    condition: null
+  after_converge:
+  - extension: egm
+    command: egm.review.loop
+    enabled: true
+    optional: true
+    priority: 5
+    description: Review-loop over tasks.md as updated by /speckit-converge, TASKS profile, 3 subagents
+    prompt: 'Run /egm-review-loop on the updated tasks.md with the TASKS profile (implementation_readiness, structural, codebase_details) to re-audit any tasks appended by /speckit-converge?. Accepting this gate also runs: python scripts/record_hook_acceptance.py --event accepted --hook-command egm.review.loop --stage after_converge --feature-dir <feature_dir>. After the re-audit completes, write `findings_tasks_rN.md` and `resolution_tasks_rN.md` continuing the after_tasks round numbering, with `stage: after_converge` in the `specs/SDLC_ARTIFACT_CONVENTION.md` frontmatter — counts mandatory; post-review documentation duty, never a precondition.'
+    condition: null

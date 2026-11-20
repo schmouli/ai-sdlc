@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-11-20T08:29:02.895044-05:00",
+  "latest": {
+    "window_start": "2026-10-21T08:29:02.890508-04:00",
+    "window_end": "2026-11-20T08:29:02.890508-05:00",
+    "skills": [
+      {
+        "skill": "speckit-tasks",
+        "activations": 86,
+        "successes": 0,
+        "failures": 0,
+        "avg_duration_ms": 0.0,
+        "test_pass_rate": 0.0,
+        "deployment_success_rate": null,
+        "learning_contribution": {
+          "applied_count": 0,
+          "outcome_delta": null
+        },
+        "improvement_score": 0.0,
+        "incomplete_sessions": 86
+      },
+      {
+        "skill": "verify_wiring",
+        "activations": 25,
+        "successes": 0,
+        "failures": 0,
+        "avg_duration_ms": 0.0,
+        "test_pass_rate": 0.0,
+        "deployment_success_rate": null,
+        "learning_contribution": {
+          "applied_count": 0,
+          "outcome_delta": null
+        },
+        "improvement_score": 0.0,
+        "incomplete_sessions": 25
+      }
+    ],
+    "overlays": [],
+    "baseline_skills": [],
+    "baseline_overlays": [],
+    "deltas": {
+      "skills": [
+        {
+          "subject": "speckit-tasks",
+          "activations": 86,
+          "success_rate_change": 0.0
+        },
+        {
+          "subject": "verify_wiring",
+          "activations": 25,
+          "success_rate_change": 0.0
+        }
+      ],
+      "overlays": []
+    }
+  }
+}

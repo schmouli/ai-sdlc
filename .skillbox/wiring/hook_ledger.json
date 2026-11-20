@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "ts": "2026-11-12T18:20:57.097928+00:00",
+      "event": "after_plan",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:21:25.352845+00:00",
+      "event": "after_plan",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:21:59.364765+00:00",
+      "event": "before_specify",
+      "command": "egm.brainstorm",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:16.690468+00:00",
+      "event": "after_specify",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:16.864076+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.037308+00:00",
+      "event": "after_analyze",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.204872+00:00",
+      "event": "after_implement",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.370462+00:00",
+      "event": "after_converge",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.538237+00:00",
+      "event": "after_specify",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.707215+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:17.870902+00:00",
+      "event": "after_analyze",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.038042+00:00",
+      "event": "after_implement",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.204431+00:00",
+      "event": "after_converge",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.371918+00:00",
+      "event": "after_specify",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.537547+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.705228+00:00",
+      "event": "after_analyze",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:18.871237+00:00",
+      "event": "after_implement",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:19.037573+00:00",
+      "event": "after_converge",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:19.204669+00:00",
+      "event": "after_specify",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:19.378400+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:19.556143+00:00",
+      "event": "after_analyze",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:22:27.864898+00:00",
+      "event": "after_implement",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:23:12.259359+00:00",
+      "event": "after_specify",
+      "command": "egm.review.loop",
+      "decision": "accepted",
+      "feature_dir": "specs/smoke-f5-test"
+    },
+    {
+      "ts": "2026-11-12T18:23:29.100989+00:00",
+      "event": "after_specify",
+      "command": "egm.review.loop",
+      "decision": "accepted",
+      "feature_dir": "specs/smoke-f5-test"
+    },
+    {
+      "ts": "2026-11-12T18:56:05.583006+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:56:43.860857+00:00",
+      "event": "after_tasks",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-12T18:56:55.137417+00:00",
+      "event": "after_specify",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/006-ai-sdlc-telemetry-wiring"
+    },
+    {
+      "ts": "2026-11-14T03:52:23.933554+00:00",
+      "event": "after_specify",
+      "command": "egm.review.loop",
+      "decision": "accepted",
+      "feature_dir": "specs/007-sdlc-metrics"
+    },
+    {
+      "ts": "2026-11-14T16:51:58.011554+00:00",
+      "event": "after_plan",
+      "command": "egm.review",
+      "decision": "accepted",
+      "feature_dir": "specs/007-sdlc-metrics"
+    },
+    {
+      "ts": "2026-11-14T17:32:14.894497+00:00",
+      "event": "after_tasks",
+      "command": "egm.review.loop",
+      "decision": "accepted",
+      "feature_dir": "specs/007-sdlc-metrics"
+    },
+    {
+      "ts": "2026-11-14T19:57:10.589472+00:00",
+      "event": "after_implement",
+      "command": "egm.drift.report",
+      "decision": "accepted",
+      "feature_dir": "specs/007-sdlc-metrics"
+    }
+  ]
+}

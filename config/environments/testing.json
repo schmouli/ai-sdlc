@@ -1,0 +1,24 @@
+{
+  "system": {
+    "skillbox": {
+      "enabled": false,
+      "state_root": ".skillbox",
+      "mlflow": {
+        "enabled": false,
+        "experiment": "skillbox-agent-learning",
+        "tracking_uri": "sqlite:///mlflow.db",
+        "batch_interval_seconds": 60
+      },
+      "learning": {
+        "window_days": 90,
+        "min_frequency": 5,
+        "min_consistency": 0.6,
+        "reason_cluster_threshold": 0.5,
+        "recompute_interval_hours": 24
+      },
+      "review": { "pending_review_sla_days": 7 },
+      "scheduler": { "loop_seconds": 300, "reindex_interval_hours": 24 },
+      "wiring_capture_enabled": false
+    }
+  }
+}
