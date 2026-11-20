@@ -393,10 +393,3 @@ Copy-Item scripts\hooks\post-commit .git\hooks\post-commit     # KG auto-stamp
 - `config/environments/*.json` — switch SkillBox on/off per environment.
 - Optional: set the manifest `wiring_adopted_at` stamp **only** together with
   `wiring_capture_enabled: true` when you adopt hook instrumentation.
-
-## Origin & relationship to MetaTrader
-
-Extracted from [schmouli/MetaTrader](https://github.com/schmouli/MetaTrader) (2026-11), where these
-components ran inside a live MT4 auto-trading system. In that host repo the components are advisory
-monitors of the trading loop; here they are the entire repository — the methodology itself,
-ready to install in any code base via the layout above.
