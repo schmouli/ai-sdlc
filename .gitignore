@@ -34,3 +34,5 @@ output/kg/
 # Local scratch
 *.tmp
 .DS_Store
+mlruns/
+mlflow.db*

@@ -3,7 +3,7 @@
 GENERATED — do not hand-edit. Rendered by scripts/generate_lifecycle_map.py from:
 
 - source: .specify/extensions.yml (sha256:0930ae8cca25) [sole hook truth]
-- source: .specify/wiring-manifest.yml (sha256:056eb15ba4cb) [profiles/budgets/artifacts/trigger]
+- source: .specify/wiring-manifest.yml (sha256:a75c79275852) [profiles/budgets/artifacts/trigger]
 
 Every speckit stage row below is advisory-only: findings never gate implementation and never touch the trading loop.
 

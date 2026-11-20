@@ -27,3 +27,26 @@ The generated stage-to-tool view lives at [docs/AI_SDLC_LIFECYCLE_MAP.md](docs/A
   sources (manifest/extensions), never the outputs.
 - Verify after changes: `python scripts/verify_wiring.py` (wiring), `python -m pytest tests/skillbox -q`
   (skillbox changes), `python scripts/run_knowledge_graph.py verify` (kg changes).
+
+<!-- SKILLBOX:BEGIN approved-overlay-guidance (auto-generated; edit outside markers only) -->
+
+## SkillBox Approved Overlay Guidance
+
+Auto-generated from human-approved SkillBox overlays (specs/004-skillbox-adaptive-learning).
+Pending/unapproved versions are never included; review via `python -m src.skillbox review list`.
+
+### Testing
+- **Engineering Best Practices (Seed)** `testing/engineering-best-practices@v01` (approved 2026-11-09 by schmo)
+  Verify before assuming: every claimed-green change runs its focused test/verifier (the `verify_*` convention) before the task is marked complete.
+  Test-first for regressions: repro a defect with a failing test, then fix; the test names the behavior it protects.
+  Isolated verification: tests and verifiers use temp/synthetic state (never touch production databases, live models, or the trading runtime).
+  Single source of truth: registry/DB state wins over config fallbacks; when a champion exists, it is authoritative — mirrors spec invariants for both trading models and SkillBox overlays.
+  Constitution over convenience: when a quick fix conflicts with `.specify/memory/constitution.md` principles (safety gates, approval-only activation, fail-soft telemetry), the principle wins.
+  EST/EDT for state: persisted timestamps use America/New_York; UTC only where an external contract requires it.
+  Minimal, additive changes: prefer extending existing patterns (`src/<module>` package + verify script + focused tests) over inventing parallel structures.
+  Document operational changes: any behavior change ships with its docs entry (INDEX/overview) and, for specs, updated acceptance evidence.
+
+<!-- skillbox-digest: 0b1a3d0c039b6db5a637ea4a8e8eb06ff799820460632cec313d8458ebf5e4c1 -->
+_Last refreshed: 2026-11-20T12:56:13.739470-05:00_
+
+<!-- SKILLBOX:END -->

@@ -76,7 +76,7 @@
     {
       "skill_id": "speckit-analyze",
       "base_path": ".github\\skills\\speckit-analyze\\SKILL.md",
-      "content_hash": "sha256:bc5c24e6bbadf90f58e52d351c9ea22d502257ffb584694a9a46cf592dd78033",
+      "content_hash": "sha256:39b752beabfdb26d6f3520f8ad11127eb4bc94c7febc52a92736a1a618327cdb",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -88,13 +88,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-analyze",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-checklist",
       "base_path": ".github\\skills\\speckit-checklist\\SKILL.md",
-      "content_hash": "sha256:f846c702c2a83777ab6806decbfaecb9d7f48b15f48bebb2db1d5f06bc6775dc",
+      "content_hash": "sha256:73f89f993c2cccd7021f870fa8b3fda3533cd0929787b9ad10a9811212e16760",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -106,13 +106,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-checklist",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-clarify",
       "base_path": ".github\\skills\\speckit-clarify\\SKILL.md",
-      "content_hash": "sha256:c0ab0a24043c37e03db3251a261d9250da95bb1ab5f69b51f6beedf009900c48",
+      "content_hash": "sha256:439c442303304924aa45776bdda0fdaecb415e3de1d73ba2d003efbdf452053c",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -124,13 +124,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-clarify",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-constitution",
       "base_path": ".github\\skills\\speckit-constitution\\SKILL.md",
-      "content_hash": "sha256:9ba37cfc2ad0d64dcaf4816f85405376f9e671ef485220dbcbb8ed002aa93036",
+      "content_hash": "sha256:a93d6354205aa5b2ca94f071762c299fcf713aab0e73158771d777e5fdeb6b3d",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -142,13 +142,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-constitution",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-converge",
       "base_path": ".github\\skills\\speckit-converge\\SKILL.md",
-      "content_hash": "sha256:c73faaef7cd7cbf8b5f5b3a378f5b583b4b878fa6add039d0dc30f5617baa5ef",
+      "content_hash": "sha256:731544392d289a0c527e6b2553230eb4ff29545e9eb94de2757849288b296778",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -160,13 +160,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-converge",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-implement",
       "base_path": ".github\\skills\\speckit-implement\\SKILL.md",
-      "content_hash": "sha256:47bfb14d191d970e63b1acd362a9570baadea947daa1b3b747c3305aa0bd85cc",
+      "content_hash": "sha256:8fbe56bbaf89700cc48fd3695478157b7c3c6e8926068e64cc68a34659261c6d",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -178,13 +178,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-implement",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-plan",
       "base_path": ".github\\skills\\speckit-plan\\SKILL.md",
-      "content_hash": "sha256:cef8c4f2cdecc92b2069ba9e0cc3f921d0f87915caa1d8bc023dbc665e02904f",
+      "content_hash": "sha256:4819c10ff4250a639b6ac4cd4cb3862833bd458263b70bc722eb719efd4fa9a0",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -196,8 +196,8 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-plan",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-specify",
@@ -214,13 +214,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-specify",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-tasks",
       "base_path": ".github\\skills\\speckit-tasks\\SKILL.md",
-      "content_hash": "sha256:2236ce1193fc122ee791c4f646aac11a341096670f1ea9aa5424b78148d9b44a",
+      "content_hash": "sha256:eff397c50f841097493ee48530ba13a0b48d1894b076895f0a212c727bf2e10f",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -232,13 +232,13 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-tasks",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "speckit-taskstoissues",
       "base_path": ".github\\skills\\speckit-taskstoissues\\SKILL.md",
-      "content_hash": "sha256:b419786ada89471578c5a7386caa545e204c237a5dd88ba4a7f328d744abcad6",
+      "content_hash": "sha256:7d9cecc41abe72e279c435c3eb198fe090265d184247bd6d7acd7a81749a46fc",
       "enabled": true,
       "overlay_groups": [
         "global",
@@ -250,8 +250,8 @@
       "renamed_from": null,
       "perf_summary_ref": "speckit-taskstoissues",
       "first_seen": "2026-11-09T23:14:31.508591-05:00",
-      "last_seen": "2026-11-20T08:35:00.054178-05:00",
-      "last_indexed": "2026-11-20T08:35:00.054178-05:00"
+      "last_seen": "2026-11-20T12:55:41.926196-05:00",
+      "last_indexed": "2026-11-20T12:55:41.926196-05:00"
     },
     {
       "skill_id": "metatrader-elephant",

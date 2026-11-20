@@ -1,66 +1,21 @@
-# MetaTrader AutoTrading System Requirements
+# AI-SDLC Toolkit Requirements
 # Install with: pip install -r requirements.txt
+# The toolkit is standard-library-first (json/sqlite3/pathlib/hashlib); only
+# these runtime dependencies are required.
 
-# Core dependencies
-pandas>=2.0.0
-numpy>=1.24.0
-sqlite3
-
-# ML (Phase 3 model lifecycle: training, validation, shadow scoring)
-scikit-learn>=1.3.0
-xgboost>=2.0.0
-scipy>=1.11.0
-
-# Data processing and analysis
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
-python-dateutil>=2.8.0
-
-# Logging and utilities
-colorama>=0.4.6
-
-# Configuration management
+# YAML wiring-manifest parsing (.specify/wiring-manifest.yml, extensions.yml)
 pyyaml>=6.0
 
-# MetaTrader MCP health, market-data, and controlled order access
-mt4-mcp>=0.1.0
-
-# MCP SDK for src/mcp/local_mcp_server.py (stdio FastMCP server).
-# PIN mcp<2: mcp 2.x renamed FastMCP -> MCPServer and broke the import
-# (regression seen 2026-11-03 when specify-cli pulled mcp 2.3.0).
-# Note: specify-cli requires mcp>=2.2 — install it with --no-deps or in a
-# separate environment if you need it; do NOT let pip upgrade mcp to 2.x.
-mcp>=1.0,<2
-
-# Scheduling for sync manager
-schedule>=1.2.0
-
-# Optional: Enhanced analytics (install requirements-dashboard.txt for full analytics)
-# plotly>=5.17.0
-# dash>=2.14.0
-# MLflow observability (model training + registry telemetry)
-# NOTE: full mlflow (NOT mlflow-skinny) is required for the MLflow UI —
-# mlflow-skinny does not bundle the built JS UI and the server starts but
-# shows "landing page (index.html) not found".
-mlflow>=3.0
-sqlalchemy>=2.0
-alembic>=1.13
-flask-cors>=4.0
-waitress>=3.0       # Windows-friendly WSGI server (gunicorn is Unix-only)
-aiohttp>=3.9
-# uvicorn workers>1 cannot inherit TCP sockets on Windows (WinError 10022).
-# Start the UI with --workers 1 (see launcher scripts + docs).
-uvicorn>=0.30,<0.35
-starlette>=0.37,<0.48
-
-# SkillBox adaptive learning runtime (specs/004): standard library only
-# (json/sqlite3/pathlib/hashlib) + the mlflow dependency above for the
-# skillbox-* telemetry push. No new packages required.
-
-# Code Knowledge Graph (feature 003): graph engine + native-format interop export
-# (specs/003-code-knowledge-graph/research.md R2 — install gate PASSED 2026-11-09).
-# Optional at runtime: kg falls back to a stdlib PageRank if missing; never on trading path.
-networkx>=3.0,<4
-# ZoneInfo("America/New_York") data provider for src/kg/models.py timestamps —
-# Windows needs the tzdata package (system tz databases are absent) (review F5).
+# ZoneInfo("America/New_York") data provider for src/kg/models.py +
+# src/skillbox/telemetry.py timestamps — Windows needs the tzdata package
+# (system tz databases are absent) (KG review F5).
 tzdata>=2024.1
+
+# Code Knowledge Graph native-format interop export (optional at runtime:
+# kg falls back to a stdlib PageRank if missing; never blocks anything)
+networkx>=3.0,<4
+
+# Optional — MLflow telemetry sink (skillbox push stage; degrades fail-soft
+# when absent or disabled: system.skillbox.mlflow.enabled / MT4_SKILLBOX_MLFLOW_ENABLED).
+# NOTE: full mlflow (NOT mlflow-skinny) is required for the MLflow UI.
+# mlflow>=3.0
